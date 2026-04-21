@@ -24,7 +24,6 @@ mainSections = ["posts"]
 
 [markup.highlight]
   noClasses = false
-  style = "github"
 
 [outputs]
   home = ["HTML", "RSS"]

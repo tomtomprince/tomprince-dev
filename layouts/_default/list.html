@@ -1,5 +1,5 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<h1 class="p-name">{{ .Title }}</h1>
 {{ with .Content }}{{ . }}{{ end }}
 <div class="h-feed">
   {{ range .Pages }}

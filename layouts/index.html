@@ -3,7 +3,7 @@
   {{ .Content }}
 </section>
 <section class="h-feed">
-  <h2>Recent posts</h2>
+  <h2 class="p-name">Recent posts</h2>
   {{ $n := .Site.Params.homepageRecentPosts }}
   {{ range first $n (where .Site.RegularPages "Section" "posts") }}
   <article class="h-entry">

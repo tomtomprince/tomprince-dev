@@ -457,6 +457,7 @@ After scaffolding:
 
 ## 16. Open owner TODOs (post-scaffold, not Claude Code)
 
+**Site / content:**
 - Pick final accent color hex
 - Decide serif vs sans body font
 - Write first real post
@@ -467,3 +468,10 @@ After scaffolding:
 - Revisit `u-email` inclusion in h-card
 - Revisit `llms.txt`
 - Consider HSTS preload submission once confident in HTTPS stability
+- Replace `static/favicon.ico` placeholder
+
+**Minor code improvements (from final review — low priority):**
+- Add `:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }` to `main.css` for keyboard navigation
+- `scripts/deploy`: the unquoted `$DRY_FLAG` in the rsync invocation triggers `shellcheck` SC2086; conventional POSIX workaround, low practical risk
+- `layouts/_default/single.html`: `/about/` and `/now/` pages show their `date` field as a visible timestamp — add a `layouts/page.html` layout without the date block if you want static pages to look dateless
+- `hugo.toml`: `mainSections` at root scope works but is semantically a params-level key; add a comment clarifying it's a Hugo site-level config key
