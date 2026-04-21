@@ -1,0 +1,26 @@
+tomprince.dev, www.tomprince.dev {
+    @www host www.tomprince.dev
+    redir @www https://tomprince.dev{uri} permanent
+
+    root * /var/www/tomprince.dev
+    file_server
+    encode gzip zstd
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Content-Security-Policy "default-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'self'; form-action 'self'; frame-ancestors 'none'"
+        X-Content-Type-Options nosniff
+        Referrer-Policy strict-origin-when-cross-origin
+        Permissions-Policy "interest-cohort=()"
+        X-Robots-Tag "noai, noimageai"
+    }
+
+    handle_errors {
+        @404 expression {err.status_code} == 404
+        rewrite @404 /404.html
+        file_server
+    }
+
+    @rss path_regexp rss_path (^|/)index\.xml$
+    header @rss Content-Type "application/rss+xml; charset=utf-8"
+}

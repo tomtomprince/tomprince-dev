@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+cd "$(dirname "$0")/.."
+hugo --minify --gc
+if [ ! -f public/index.html ]; then
+  echo "error: public/index.html missing after build; aborting deploy" >&2
+  exit 1
+fi
+DRY_FLAG=""
+[ "${DRY_RUN:-0}" = "1" ] && DRY_FLAG="--dry-run"
+rsync -avz --delete $DRY_FLAG \
+  --exclude='.well-known' \
+  public/ \
+  deploy@tomprince.dev:/var/www/tomprince.dev/

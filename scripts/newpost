@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+cd "$(dirname "$0")/.."
+if [ -z "$*" ]; then
+  echo "usage: newpost <title words>" >&2
+  exit 1
+fi
+slug=$(echo "$*" | tr '[:upper:]' '[:lower:]' | tr -s ' ' '-' | tr -cd 'a-z0-9-' | tr -s '-')
+slug=${slug#-}
+slug=${slug%-}
+if [ -z "$slug" ]; then
+  echo "error: slug is empty after normalization" >&2
+  exit 1
+fi
+hugo new --kind posts "posts/$slug.md"
+target="content/posts/$slug.md"
+${EDITOR:-nvim} "$target"

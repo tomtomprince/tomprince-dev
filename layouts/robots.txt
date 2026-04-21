@@ -1,0 +1,37 @@
+User-agent: *
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}
+
+# Stance B: block training crawlers; on-demand fetchers (ChatGPT-User,
+# Claude-User, Perplexity-User, etc.) remain allowed by default.
+User-agent: GPTBot
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Applebot-Extended
+Disallow: /
+User-agent: Bytespider
+Disallow: /
+User-agent: Amazonbot
+Disallow: /
+User-agent: Meta-ExternalAgent
+Disallow: /
+User-agent: FacebookBot
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: Diffbot
+Disallow: /
+User-agent: ImagesiftBot
+Disallow: /
+User-agent: cohere-ai
+Disallow: /
+User-agent: Omgilibot
+Disallow: /

@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section>
+  {{ .Content }}
+</section>
+<section class="h-feed">
+  <h2>Recent posts</h2>
+  {{ $n := .Site.Params.homepageRecentPosts }}
+  {{ range first $n (where .Site.RegularPages "Section" "posts") }}
+  <article class="h-entry">
+    <h3><a class="u-url p-name" href="{{ .Permalink }}">{{ .Title }}</a></h3>
+    <time class="dt-published" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+  </article>
+  {{ end }}
+  <p><a href="/posts/">Full archive →</a></p>
+</section>
+{{ end }}

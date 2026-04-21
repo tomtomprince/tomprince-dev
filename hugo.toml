@@ -1,0 +1,31 @@
+baseURL = "https://tomprince.dev/"
+languageCode = "en-us"
+title = "Tom Prince"
+timeZone = "UTC"
+enableRobotsTXT = true
+enableEmoji = false
+enableGitInfo = true
+
+mainSections = ["posts"]
+
+[permalinks]
+  posts = "/:year/:slug/"
+
+[params]
+  author = "Tom Prince"
+  description = "Personal site of Tom Prince."
+  homepageRecentPosts = 5
+
+[taxonomies]
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.highlight]
+  noClasses = false
+  style = "github"
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
