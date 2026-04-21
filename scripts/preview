@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+cd "$(dirname "$0")/.."
+hugo --minify --gc
+echo "Serving at http://localhost:8080 (Ctrl-C to stop)"
+cd public && python3 -m http.server 8080
