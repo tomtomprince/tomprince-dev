@@ -42,5 +42,5 @@ The live Caddyfile lives on the VPS at `/etc/caddy/Caddyfile`. A reference copy 
 
 ## Licenses
 
-- Code: TODO (owner to decide — MIT suggested)
-- Content: TODO (owner to decide — CC BY 4.0 suggested)
+- Code: [MIT](LICENSE)
+- Content: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
