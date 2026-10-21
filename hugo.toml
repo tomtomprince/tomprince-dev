@@ -1,5 +1,5 @@
 baseURL = "https://tomprince.dev/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Tom Prince"
 timeZone = "UTC"
 enableRobotsTXT = true
