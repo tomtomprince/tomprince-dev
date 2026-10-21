@@ -2,4 +2,4 @@
 title = "Tom Prince"
 +++
 
-Tom Prince. Software engineer. Writing here when I have something to say.
+Hi I'm Tom Prince. I'm a Founding Software engineer @ Bambi Health making NEMT dispatching awesome.
